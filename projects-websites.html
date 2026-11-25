@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="google-site-verification" content="o9NqWlHGjIKC7NE1qPQD2Ud2jrjF87Ueu_4IIdPJcIg" />
+  <meta charset="UTF-8">
+  <script src="js/theme.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Karim Abdelnour's App Development Projects — Android, Desktop, and Web applications built for real-world use.">
+  <meta name="keywords" content="Karim Abdelnour, App Development, Mobile Apps, Desktop Apps, Android, Python, Java">
+  <meta name="author" content="Karim Abdelnour">
+  <title>App Projects — Karim Abdelnour</title>
+  <link rel="canonical" href="https://karimuq.github.io/website/projects-apps.html">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://karimuq.github.io/website/projects-apps.html">
+  <meta property="og:title" content="App Development Projects — Karim Abdelnour">
+  <meta property="og:description"
+    content="Android, Desktop, and Web applications built for real-world use by Karim Abdelnour.">
+  <meta property="og:image" content="https://karimuq.github.io/website/pixel-art/Kamilaaaaaa.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://karimuq.github.io/website/projects-apps.html">
+  <meta name="twitter:title" content="App Development Projects — Karim Abdelnour">
+  <meta name="twitter:description"
+    content="Android, Desktop, and Web applications built for real-world use by Karim Abdelnour.">
+  <meta name="twitter:image" content="https://karimuq.github.io/website/pixel-art/Kamilaaaaaa.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css?v=17.8">
+  <link rel="stylesheet" href="css/game-styles.css?v=2.2">
+  <style>
+    /* ==========================================
+       APP SHOWCASE DESIGN SYSTEM
+       ========================================== */
+
+    /* Copyright Disclosure Toggle */
+    .copyright-toggle-wrap {
+      display: block;
+      text-align: right;
+      margin: 8px 0 16px;
+      cursor: pointer;
+      user-select: none;
+      outline: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .copyright-toggle-btn {
+      border: 1px solid transparent;
+      border-radius: 8px;
+      padding: 10px 16px;
+      background: #3498db;
+      color: #fff;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      list-style: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .copyright-toggle-btn:hover {
+      background: #2980b9;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 15px rgba(52, 152, 219, 0.2);
+    }
+
+    .copyright-toggle-btn::-webkit-details-marker {
+      display: none;
+    }
+
+    .copyright-toggle-wrap::marker,
+    .copyright-toggle-wrap::-webkit-details-marker {
+      display: none;
+      content: "";
+    }
+
+    .copyright-disclosure:not([open]) .copyright-notice {
+      display: none;
+    }
+
+    /* Sub-Filter Bar */
+    .app-filter-bar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.65rem;
+      margin: 1.5rem auto 2.5rem;
+      flex-wrap: wrap;
+    }
+
+    .app-filter-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.55rem 1.15rem;
+      border-radius: 9999px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      border: 1px solid var(--border-color, rgba(44, 62, 80, 0.12));
+      background: var(--bg-card, rgba(255, 255, 255, 0.8));
+      color: var(--text-secondary, #475569);
+      box-shadow: 0 2px 8px var(--shadow-sm, rgba(0, 0, 0, 0.04));
+    }
+
+    .app-filter-pill i {
+      display: inline-block !important;
+      font-size: 0.85rem;
+    }
+
+    .app-filter-pill .filter-count {
+      display: inline-block;
+      padding: 0.1rem 0.45rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      background: rgba(0, 0, 0, 0.06);
+      color: inherit;
+      transition: background 0.2s ease;
+    }
+
+    [data-theme="dark"] .app-filter-pill .filter-count {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .app-filter-pill:hover {
+      transform: translateY(-2px);
+      border-color: #3498db;
+      color: #3498db;
+      box-shadow: 0 6px 16px rgba(52, 152, 219, 0.18);
+    }
+
+    .app-filter-pill.active {
+      background: #3498db;
+      color: #ffffff;
+      border-color: #3498db;
+      box-shadow: 0 4px 16px rgba(52, 152, 219, 0.35);
+    }
+
+    .app-filter-pill.active .filter-count {
+      background: rgba(255, 255, 255, 0.25);
+      color: #ffffff;
+    }
+
+    /* Grid Layout */
+    .app-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 2rem;
+      margin-top: 1rem;
+    }
+
+    /* Card styling */
+    .app-hub-card {
+      background: var(--game-card-bg, #ffffff);
+      border: 1px solid var(--game-card-border, #e2e8f0);
+      border-radius: 18px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease, opacity 0.3s ease;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      backdrop-filter: blur(10px);
+      position: relative;
+    }
+
+    .app-hub-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(59, 130, 246, 0.45);
+      box-shadow: 0 20px 40px -12px rgba(59, 130, 246, 0.25);
+    }
+
+    .app-hub-card.hidden {
+      display: none !important;
+    }
+
+    /* Card Banner */
+    .app-card-banner {
+      height: 190px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      border-top-left-radius: 17px;
+      border-top-right-radius: 17px;
+      transition: transform 0.3s ease;
+    }
+
+    /* Subtle radial glow inside banner */
+    .app-card-banner::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 50% 45%, var(--banner-glow, rgba(255, 255, 255, 0.18)) 0%, transparent 68%);
+      pointer-events: none;
+      z-index: 1;
+      transition: opacity 0.3s ease;
+    }
+
+    .app-card-banner::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(15, 23, 42, 0.65) 0%, rgba(15, 23, 42, 0.05) 55%, transparent 100%);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .app-hub-card:hover .app-card-banner::before {
+      opacity: 1.3;
+    }
+
+    /* Center Squircle App Icon */
+    .app-icon-squircle {
+      width: 78px;
+      height: 78px;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.24);
+      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+      position: relative;
+      z-index: 2;
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
+    }
+
+    .app-hub-card:hover .app-icon-squircle {
+      transform: scale(1.1) translateY(-4px);
+      box-shadow: 0 20px 36px rgba(0, 0, 0, 0.45), 0 0 28px var(--banner-glow, rgba(59, 130, 246, 0.45));
+    }
+
+    .app-icon-squircle i {
+      display: inline-block !important;
+      font-size: 2.25rem;
+      filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.3));
+      transition: transform 0.3s ease;
+    }
+
+    .app-icon-squircle.image-backed {
+      background: transparent !important;
+      border-color: transparent !important;
+      box-shadow: none !important;
+      padding: 0 !important;
+      overflow: hidden;
+    }
+
+    .app-hub-card:hover .app-icon-squircle i {
+      transform: scale(1.05);
+    }
+
+    /* Platform Pill Badge (Top-Right) */
+    .app-platform-pill {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      z-index: 3;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.35rem 0.85rem;
+      border-radius: 9999px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+      transition: transform 0.2s ease;
+    }
+
+    .app-platform-pill i {
+      display: inline-block !important;
+      font-size: 0.8rem;
+    }
+
+    .pill-android {
+      background: rgba(16, 185, 129, 0.25);
+      color: #34d399;
+      border: 1px solid rgba(52, 211, 153, 0.45);
+    }
+
+    .pill-desktop {
+      background: rgba(99, 102, 241, 0.25);
+      color: #a5b4fc;
+      border: 1px solid rgba(165, 180, 252, 0.45);
+    }
+
+    .pill-concept {
+      background: rgba(245, 158, 11, 0.25);
+      color: #fcd34d;
+      border: 1px solid rgba(252, 211, 77, 0.45);
+    }
+
+    /* Card Body */
+    .app-card-body {
+      padding: 1.6rem 1.6rem 1.4rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .app-card-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .app-card-header h3 {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--game-text-primary, #0f172a);
+      margin: 0;
+      line-height: 1.25;
+    }
+
+    .app-card-body p {
+      color: var(--game-text-secondary, #475569);
+      font-size: 0.94rem;
+      line-height: 1.6;
+      margin-bottom: 1.35rem;
+      flex: 1;
+    }
+
+    .app-card-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 1.1rem;
+      border-top: 1px solid var(--game-card-border, #e2e8f0);
+      margin-top: auto;
+    }
+
+    .app-card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+    }
+
+    .app-card-tag {
+      font-size: 0.76rem;
+      font-weight: 600;
+      padding: 0.25rem 0.65rem;
+      border-radius: 6px;
+      background: var(--game-badge-bg, #eff6ff);
+      color: var(--game-badge-text, #2563eb);
+    }
+
+    /* Card Action Buttons */
+    .app-card-actions {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+      margin-top: 1.25rem;
+    }
+
+    .action-play-btn {
+      flex: 1 1 160px;
+      min-width: 0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.15rem;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #ffffff;
+      background: linear-gradient(135deg, #2563eb, #1d4ed8);
+      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
+      text-decoration: none;
+      transition: all 0.25s ease;
+      white-space: nowrap;
+    }
+
+    .action-play-btn i {
+      display: inline-block !important;
+      font-size: 0.85rem;
+      transition: transform 0.2s ease;
+    }
+
+    .action-play-btn:hover {
+      background: linear-gradient(135deg, #1d4ed8, #1e40af);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 22px rgba(37, 99, 235, 0.45);
+      color: #ffffff;
+    }
+
+    .action-play-btn:hover i {
+      transform: translateX(3px);
+    }
+
+    .action-icon-btn {
+      width: 44px;
+      height: 44px;
+      flex: 0 0 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+      background: var(--game-badge-bg, rgba(59, 130, 246, 0.1));
+      color: var(--game-badge-text, #2563eb);
+      border: 1px solid rgba(59, 130, 246, 0.22);
+      font-size: 1.15rem;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      cursor: pointer;
+    }
+
+    .action-icon-btn i {
+      display: inline-block !important;
+    }
+
+    .action-icon-btn:hover {
+.action-icon-btn:hover {
+      background: rgba(59, 130, 246, 0.22);
+      transform: translateY(-2px);
+      border-color: rgba(59, 130, 246, 0.45);
+      box-shadow: 0 6px 16px rgba(59, 130, 246, 0.25);
+      color: #1d4ed8;
+    }
+
+    .action-try-btn {
+      flex: 1 1 auto;
+      min-width: 0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.45rem;
+      padding: 0.72rem 1.05rem;
+      border-radius: 10px;
+      background: rgba(16, 185, 129, 0.15);
+      color: #10b981;
+      border: 1px solid rgba(16, 185, 129, 0.35);
+      font-size: 0.88rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      white-space: nowrap;
+    }
+
+    .action-try-btn i {
+      display: inline-block !important;
+      font-size: 0.8rem;
+    }
+
+    .action-try-btn:hover {
+      background: rgba(16, 185, 129, 0.28);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(16, 185, 129, 0.25);
+      color: #059669;
+    }
+
+    /* Force all action icons to display */
+    .app-card-actions a i,
+    .app-card-banner i,
+    .app-platform-pill i,
+    .app-filter-pill i {
+      display: inline-block !important;
+    }
+
+    @media (max-width: 640px) {
+      .app-cards-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .app-filter-bar {
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding-bottom: 0.5rem;
+        flex-wrap: nowrap;
+      }
+
+      .app-filter-pill {
+        white-space: nowrap;
+      }
+    }
+
+    /* Closed Testing Hub Banner */
+    .beta-alert-banner {
+      background: linear-gradient(135deg, rgba(37, 99, 235, 0.08), rgba(16, 185, 129, 0.08));
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      border-radius: 16px;
+      padding: 1.25rem 1.75rem;
+      margin: 1.5rem auto 1.75rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.25rem;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .beta-alert-banner:hover {
+      border-color: #3b82f6;
+      box-shadow: 0 8px 24px rgba(59, 130, 246, 0.12);
+    }
+
+    .beta-alert-text {
+      display: flex;
+      align-items: center;
+      gap: 1.15rem;
+      flex: 1;
+      min-width: 280px;
+    }
+
+    .beta-alert-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #2563eb, #10b981);
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.35rem;
+      flex-shrink: 0;
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+    }
+
+    .beta-alert-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      padding: 0.75rem 1.4rem;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #2563eb, #1d4ed8);
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 0.92rem;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      white-space: nowrap;
+      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
+    }
+
+    .beta-alert-cta:hover {
+      background: linear-gradient(135deg, #1d4ed8, #1e40af);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(37, 99, 235, 0.45);
+      color: #ffffff;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="header-content">
+      <div class="header-left">
+        <h1>Karim Abdelnour</h1>
+      </div>
+      <button class="hamburger"><span></span><span></span><span></span></button>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="projects.html" class="active">Projects</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <h2>Websites</h2>
+        <p>A collection of client websites and personal web projects.</p>
+      </div>
+    </section>
+
+    <section class="projects">
+      <div class="project-nav">
+        <a href="projects.html">All Projects</a>
+        <a href="projects-games.html">Games</a>
+        <a href="projects-pixelart.html">Pixel Art</a>
+        <a href="projects-3d.html">3D Models</a>
+        <a href="projects-apps.html">Apps</a>
+        <a href="projects-arduino.html">Arduino</a>
+        <a href="projects-cad.html">CAD</a>
+      </div>
+
+      <!-- App Showcase Grid -->
+      <div class="app-cards-grid">
+
+        <!-- Graphic Designer Website -->
+        <article class="app-hub-card" data-category="desktop">
+          <div class="app-card-banner"
+            style="background: linear-gradient(140deg, #003973, #E5E5BE); --banner-glow: #E5E5BE;">
+            <div class="app-icon-squircle">
+              <i class="fa-solid fa-palette" style="color: #E5E5BE;"></i>
+            </div>
+            <div class="app-platform-pill pill-desktop" style="background: rgba(255, 255, 255, 0.15); color: #fff; border-color: rgba(255, 255, 255, 0.4);">
+              <i class="fa-solid fa-briefcase"></i> Client Work
+            </div>
+          </div>
+          <div class="app-card-body">
+            <div class="app-card-header">
+              <h3>Reviotech Technology Solutions</h3>
+            </div>
+            <p>A corporate website for REVIO, a creative technology studio specializing in smart robotics and personal electronic devices. The site introduces their first product, the Qchain smart keychain.</p>
+            <div class="app-card-meta">
+              <div class="app-card-tags">
+                <span class="app-card-tag">Web Design</span>
+                <span class="app-card-tag">Portfolio</span>
+              </div>
+            </div>
+            <div class="app-card-actions">
+              <a href="https://karimuq.github.io/reviotech/index.html" class="action-play-btn" target="_blank">
+                <i class="fa-solid fa-globe"></i> Visit Website
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Graphic Designer Website -->
+        <article class="app-hub-card" data-category="desktop">
+          <div class="app-card-banner"
+            style="background: linear-gradient(140deg, #003973, #E5E5BE); --banner-glow: #E5E5BE;">
+            <div class="app-icon-squircle">
+              <i class="fa-solid fa-palette" style="color: #E5E5BE;"></i>
+            </div>
+            <div class="app-platform-pill pill-desktop" style="background: rgba(255, 255, 255, 0.15); color: #fff; border-color: rgba(255, 255, 255, 0.4);">
+              <i class="fa-solid fa-briefcase"></i> Client Work
+            </div>
+          </div>
+          <div class="app-card-body">
+            <div class="app-card-header">
+              <h3>Graphic Designer Website</h3>
+            </div>
+            <p>A professional portfolio for Dan Elsaigh, a UI/UX and brand identity designer. The site showcases a range of projects, including logo systems, packaging design, and user interface prototypes.</p>
+            <div class="app-card-meta">
+              <div class="app-card-tags">
+                <span class="app-card-tag">Web Design</span>
+                <span class="app-card-tag">Portfolio</span>
+              </div>
+            </div>
+            <div class="app-card-actions">
+              <a href="https://danelsaigh.github.io/website/" class="action-play-btn" target="_blank">
+                <i class="fa-solid fa-globe"></i> Visit Website
+              </a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="footer-links">
+      <a href="links.html">
+        <i class="fa-solid fa-link"></i> Links Hub
+      </a>
+      <a href="contact.html">
+        <i class="fa-solid fa-envelope"></i> Contact Me
+      </a>
+      <a href="testing.html">
+        <i class="fa-brands fa-google-play"></i> Beta Testing
+      </a>
+      <a href="https://github.com/karimuq" target="_blank">
+        <i class="fa-brands fa-github"></i> GitHub
+      </a>
+      <a href="https://www.linkedin.com/in/karimabdelnour26/" target="_blank">
+        <i class="fa-brands fa-linkedin"></i> LinkedIn
+      </a>
+      <a href="https://karim25.itch.io" target="_blank">
+        <i class="fa-brands fa-itch-io"></i> Itch.io
+      </a>
+    </div>
+    <div class="footer-copyright">
+      <p>&copy; 2026 Karim Abdelnour | Portfolio</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js?v=17.2"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const filterPills = document.querySelectorAll('.app-filter-pill');
+      const appCards = document.querySelectorAll('.app-hub-card');
+      const allAppsCount = document.querySelector('.app-filter-pill[data-filter="all"] .filter-count');
+      const androidAppsCount = document.querySelector('.app-filter-pill[data-filter="android"] .filter-count');
+      const desktopAppsCount = document.querySelector('.app-filter-pill[data-filter="desktop"] .filter-count');
+      const conceptAppsCount = document.querySelector('.app-filter-pill[data-filter="concept"] .filter-count');
+
+      function updateCounts() {
+        allAppsCount.textContent = document.querySelectorAll('.app-hub-card').length;
+        androidAppsCount.textContent = document.querySelectorAll('.app-hub-card[data-category="android"]').length;
+        desktopAppsCount.textContent = document.querySelectorAll('.app-hub-card[data-category="desktop"]').length;
+        conceptAppsCount.textContent = document.querySelectorAll('.app-hub-card[data-category="concept"]').length;
+      }
+
+      function filterCards(filter) {
+        appCards.forEach(card => {
+          const category = card.getAttribute('data-category');
+          if (filter === 'all' || category === filter) {
+            card.classList.remove('hidden');
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+      }
+
+      filterPills.forEach(pill => {
+        pill.addEventListener('click', () => {
+          // Deactivate all pills
+          filterPills.forEach(p => p.classList.remove('active'));
+          // Activate the clicked pill
+          pill.classList.add('active');
+          // Filter the cards
+          const filter = pill.getAttribute('data-filter');
+          filterCards(filter);
+        });
+      });
+
+      // Initial count update
+      updateCounts();
+    });
+  </script>
+</body>
+
+</html>
